@@ -2,10 +2,11 @@
   "name": "defender-game",
   "version": "1.0.0",
   "description": "\"Browser based game\"",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "http": "http-server src"
+    "http": "http-server src",
+    "serve": "live-server src"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,10 @@
   },
   "homepage": "https://github.com/Natasha01013/ajs-homeworks-esm#readme",
   "devDependencies": {
+    "css-loader": "^7.1.2",
     "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
   }
 }

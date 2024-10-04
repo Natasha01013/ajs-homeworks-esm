@@ -1,16 +1,23 @@
-export default class Game {
+ class Game {
     start() {
       console.log('game started');
     }
   }
   
-  export class GameSavingData {
+  class GameSavingData {
   }
   
-  export function readGameSaving() {
+  function readGameSaving() {
   }
   
-  export function writeGameSaving() {
+  function writeGameSaving() {
   }
 
-  import Character from './domain.js';
+  const {Character} = require('./domain.js');
+
+  module.exports = {
+    Game,
+    GameSavingData,
+    readGameSaving,
+    writeGameSaving,
+  }
