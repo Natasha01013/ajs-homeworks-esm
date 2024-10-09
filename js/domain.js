@@ -1,6 +1,2 @@
-class Character {
-}
-
-module.exports = {
-    Character,
+export class Character {
 }
