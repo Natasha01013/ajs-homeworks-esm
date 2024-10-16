@@ -20,10 +20,11 @@ module.exports = {
     hot: true, // Включить автоперезагрузку страницы при изменении файлов
     proxy: [
     { // Собственно настройки прокси
-      '**': { // С какого адреса webpack dev server'a будут проксироваться запросы на адрес локального сервера. 
+   //   '**': { // С какого адреса webpack dev server'a будут проксироваться запросы на адрес локального сервера. 
         // В данном случае ** - значит все адреса проксировать, начиная с корня http://localhost:8080
         // Например: http://localhost:8080/user запрос на http://localhost/user (адрес из target ниже)
-        target: `http://localhost:8080/`, // Целевой адрес локального сервера, куда будут проксироваться запросы с дев сервера 
+        context: ['/api'],
+        target: `http://localhost:8080`, // Целевой адрес локального сервера, куда будут проксироваться запросы с дев сервера 
         onProxyRes(proxyRes, req, res) {
           if (proxyRes.headers.location) { // Если есть заголовок со свойством location (Где храниться полный адрес запроса к локальному серверу)
             let location = proxyRes.headers.location; // Сохраняем адрес зоголовка location из ответа в переменную location
@@ -32,7 +33,7 @@ module.exports = {
             proxyRes.headers.location = location; // Присваиваем в заголовок location подмененный адрес из переменной location
             console.log(`REPLACED: ${proxyRes.headers.location}`); // Выводит в консоль адрес после замены
           }
-        }
+//        }
       }
     }
   ]
