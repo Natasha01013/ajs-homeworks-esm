@@ -11,13 +11,14 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
-      publicPath: 'path.public', //  publicPath: params.path, // Префикс пути, по которому будут лежать файлы у вебпак дев сервера 
+      directory: path.join(__dirname, 'dist'),
+      publicPath: 'path.dist', //  publicPath: params.path, // Префикс пути, по которому будут лежать файлы у вебпак дев сервера 
       // Например: '/public/assets/' - файлы будут доступны по адресу: http://localhost/public/assets/file_name.js
     },
     host: 'localhost', // Host webpack dev server'a
     port: 8080, // Port webpack dev server'a
     hot: true, // Включить автоперезагрузку страницы при изменении файлов
+    historyApiFallback: { index: "index.html" },
     proxy: [
     { // Собственно настройки прокси
    //   '**': { // С какого адреса webpack dev server'a будут проксироваться запросы на адрес локального сервера. 
