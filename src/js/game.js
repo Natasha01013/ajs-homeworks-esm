@@ -13,4 +13,4 @@ export default class Game {
   export function writeGameSaving() {
   }
 
-  import Character from './domain.js';
+  import {Character} from './domain.js';
